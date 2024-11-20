@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100;1,300&display=swap');
+
+:root {
+    --outfit-font: "Outfit", sans-serif;
+    --italic-font: "Roboto", sans-serif; /* font-weight: 300 or 100; font-style: italic; */
+}
+
+* {
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+/* Principal Screen */
+
+.principal-screen,.game-screen {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.principal-screen {
+    display: flex; /* => flex */
+    align-items: center;
+    justify-content: center;
+}
+
+.principal-screen::before,.game-screen::before {
+    content: '';
+    position: absolute;
+    top: -100px;      /* Extiende el borde superior */
+    left: -100px;     /* Extiende el borde izquierdo */
+    right: -100px;    /* Extiende el borde derecho */
+    bottom: -100px;   /* Extiende el borde inferior */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: -1; /* Asegúrate de que el pseudo-elemento esté detrás del contenido */
+}
+
+.principal-screen::before {
+    background-image: url(./assets/principal.avif);
+    filter: blur(4px); 
+}
+
+.principal-content h1 {
+    color: #fff;
+    font-size: 70px;
+    font-family: var(--italic-font);
+    font-weight: 100;
+    font-style: italic;
+    cursor: default;
+}
+
+.btns {
+    width: 236px;
+    height: 62px;
+    background-color: #3F3D3D;
+    color: #E4E59E;
+    font-size: 24px;
+    font-family: var(--outfit-font);
+    letter-spacing: 2px;
+    border-radius: 22px;
+    border: none;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: all .2s;
+}
+.btns:hover {
+    background-color: #474444;
+}
+.btns:active {
+    transform: scale(.97);
+}
+
+.principal-content {
+    margin-top: -100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6rem;
+}
+
+
+
+/* Game Screen */
+
+.center-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.cards {
+    height: 9rem;
+    transition: all .2s;
+    cursor: pointer;
+}
+.cards:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.cards:active {
+    transform: scale(1.2);
+}
+
+
+.game-screen {
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.player-container {
+    margin-top: 20px;
+}
+
+.play-btns,.back-btn {
+    background-color: #201f1f;
+    border: none;
+    border-radius: 20px;
+    transition: all .2s;
+    cursor: pointer;
+    color: #E4E59E;
+    font-size: 30px;
+    letter-spacing: 2px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.play-btns-container {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+}
+.play-btns:first-child {
+    margin-right: 1.2rem;
+}
+
+.play-btns {
+    width: 200px;
+    height: 70px;
+}
+
+.game-result-container {height: 40px;}
+.game-result-container p {
+    text-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.new-btn {
+    display: none;
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+}
+
+.back-btn{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    margin: 20px 0 0 40px;
+    background-image: url(./assets/angles-left-solid.svg);
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.game-screen button:hover {
+    background-color: #000;
+}
+.game-screen button:active {
+    transform: scale(.97);
+}
+
+.game-screen::before {
+    background-image: url(./assets/game.avif);
+}
+
+.bot-container,.player-container,.game-result-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.bot-cards,.player-cards {
+    display: flex;
+    gap: 1rem;
+}
+.bot-cards p,.player-cards p {
+    color: #fff;
+    font-family: var(--outfit-font);
+    font-size: 50px;
+    font-weight: 400;
+    cursor: default;
+}
+.sum-bot,.sum-player {
+    font-size: 24px;
+    font-family: var(--outfit-font);
+    font-weight: 300;
+    cursor: default;
+    margin-top: 1rem;
+}
+
+.game-result-container p {
+    font-size: 40px;
+    font-family: var(--outfit-font);
+    text-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: default;
+}
+
+@media (max-height: 900px) {
+    .cards {
+        height: 8rem;
+    }
+}
+
+@media (max-width: 500px) {  /* Mobile Responsive */
+    .principal-content h1 {
+        font-size: 50px;
+    }
+    .play-btns-container {
+        right: 1rem;
+    }
+    .play-btns {
+        width: 150px;
+        height: 60px;
+        font-size: 22px;
+        letter-spacing: 2px;
+    }
+    .new-btn {
+        top: 20px;
+        left: 12rem;
+    }
+}

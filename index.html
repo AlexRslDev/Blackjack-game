@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Blackjack - Game | AlexRsl</title>
+</head>
+<body>
+    
+    <!-- Principal Screen -->
+    <div class="principal-screen">
+        <div class="principal-content">
+            <h1>Blackjack Game</h1>
+            <button class="btns start-btn">Start</button>
+        </div>
+    </div>
+
+    <!-- Game Screen -->
+
+    <div class="game-screen">
+        <button class="back-btn"></button>
+
+        <div class="center-container">
+            <div class="bot-container">
+                <div class="bot-cards"></div>
+                <p class="sum-bot"></p>
+            </div>
+            <div class="game-result-container">
+                <p class="result"></p>
+            </div>
+            <div class="player-container">
+                <div class="player-cards"></div>
+                <p class="sum-player"></p>
+            </div>
+        </div>
+
+        <div class="game">
+            <button class="play-btns new-btn">New Game</button>
+            <div class="play-btns-container">
+                <button class="play-btns hit-btn">HIT</button>
+                <button class="play-btns stay-btn">STAY</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="game.js"></script>
+</body>
+</html>
