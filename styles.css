@@ -41,7 +41,7 @@
 }
 
 .principal-screen::before {
-    background-image: url(./assets/principal.avif);
+    background-image: url(./assets/principal.png);
     filter: blur(4px); 
 }
 
@@ -173,7 +173,7 @@
 }
 
 .game-screen::before {
-    background-image: url(./assets/game.avif);
+    background-image: url(./assets/game.png);
 }
 
 .bot-container,.player-container,.game-result-container {
